@@ -30,9 +30,270 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
+      <div class="time-block" id="8am">
+        <h1>8 a.m.</h1>
+        <div id="text1"><textarea class="inputArea" id="in1"></textarea></div>
+        <button class="saveBtn" id="8save">Save</button>
+      </div>
+      <div class="time-block" id="9am">        
+        <h1>9 a.m.</h1>
+        <div id="text2"><textarea class="inputArea" id="in2"></textarea></div>
+        <button class="saveBtn" id="9save">Save</button>
+      </div>
+      <div class="time-block" id="10am">        
+        <h1>10 a.m.</h1>
+        <div id="text3"><textarea class="inputArea" id="in3"></textarea></div>
+        <button class="saveBtn" id="10save">Save</button>
+      </div>
+      <div class="time-block" id="11am">        
+        <h1>11 a.m.</h1>
+        <div id="text4"><textarea class="inputArea" id="in4"></textarea></div>
+        <button class="saveBtn" id="11save">Save</button>
+      </div>
+      <div class="time-block" id="12pm">        
+        <h1>12 p.m.</h1>
+        <div id="text5"><textarea class="inputArea" id="in5"></textarea></div>
+        <button class="saveBtn" id="12save">Save</button>
+      </div>
+      <div class="time-block" id="1pm">        
+        <h1>1 p.m.</h1>
+        <div id="text6"><textarea class="inputArea" id="in6"></textarea></div>
+        <button class="saveBtn" id="1save">Save</button>
+      </div>
+      <div class="time-block" id="2pm">        
+        <h1>2 p.m.</h1>
+        <div id="text7"><textarea class="inputArea" id="in7"></textarea></div>
+        <button class="saveBtn" id="2save">Save</button>
+      </div>
+      <div class="time-block" id="3pm">        
+        <h1>3 p.m.</h1>
+        <div id="text8"><textarea class="inputArea" id="in8"></textarea></div>
+        <button class="saveBtn" id="3save">Save</button>
+      </div>
+      <div class="time-block" id="4pm">        
+        <h1>4 p.m.</h1>
+        <div id="text9"><textarea class="inputArea" id="in9"></textarea></div>
+        <button class="saveBtn" id="4save">Save</button>
+      </div>
+      <div class="time-block" id="5pm">        
+        <h1>5 p.m.</h1>
+        <div id="text10"><textarea class="inputArea" id="in10"></textarea></div>
+        <button class="saveBtn" id="5save">Save</button>
+      </div>
+
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script>
+      var today = moment().format('dddd');  
+      var calendarDate = moment().format("MMM Do YY");
+      var hour = moment().format("HH");
+      var timeextra = moment().format("LT");
+      var numberHour = parseInt(hour, "number");
+      var adjustedHour = numberHour - 8;
+
+      console.log(numberHour);
+      console.log(adjustedHour);
+      
+      var timeBlocks = $(".time-block");
+      var container = $(".container");
+
+
+      console.log(today);
+      console.log(calendarDate);
+      console.log(hour);
+
+
+
+      $("#currentDay").text(today + " " + calendarDate + " " + timeextra);
+
+
+      if(numberHour > 8){
+        $("#8am").css("background-color", "grey");
+      }
+      if(numberHour == 8){
+        $("#8am").css("background-color", "lightblue");
+      }
+      if(numberHour < 8){
+        $("#8am").css("background-color", "lightgreen");
+      }
+
+      if(numberHour > 9){
+        $("#9am").css("background-color", "grey");
+      }
+      if(numberHour == 9){
+        $("#9am").css("background-color", "lightblue");
+      }
+      if(numberHour < 9){
+        $("#9am").css("background-color", "lightgreen");
+      }
+
+      if(numberHour > 10){
+        $("#10am").css("background-color", "grey");
+      }
+      if(numberHour == 10){
+        $("#10am").css("background-color", "lightblue");
+      }
+      if(numberHour < 10){
+        $("#10am").css("background-color", "lightgreen");
+      }
+
+      if(numberHour > 11){
+        $("#11am").css("background-color", "grey");
+      }
+      if(numberHour == 11){
+        $("#11am").css("background-color", "lightblue");
+      }
+      if(numberHour < 11){
+        $("#11am").css("background-color", "lightgreen");
+      }
+
+      if(numberHour > 12){
+        $("#12pm").css("background-color", "grey");
+      }
+      if(numberHour == 12){
+        $("#12pm").css("background-color", "lightblue");
+      }
+      if(numberHour < 12){
+        $("#12pm").css("background-color", "lightgreen");
+      }
+
+      if(numberHour > 13){
+        $("#1pm").css("background-color", "grey");
+      }
+      if(numberHour == 13){
+        $("#1pm").css("background-color", "lightblue");
+      }
+      if(numberHour < 13){
+        $("#1pm").css("background-color", "lightgreen");
+      }
+
+      if(numberHour > 14){
+        $("#2pm").css("background-color", "grey");
+      }
+      if(numberHour == 14){
+        $("#2pm").css("background-color", "lightblue");
+      }
+      if(numberHour < 14){
+        $("#2pm").css("background-color", "lightgreen");
+      }
+
+      if(numberHour > 15){
+        $("#3pm").css("background-color", "grey");
+      }
+      if(numberHour == 15){
+        $("#3pm").css("background-color", "lightblue");
+      }
+      if(numberHour < 15){
+        $("#3pm").css("background-color", "lightgreen");
+      }
+
+      if(numberHour > 16){
+        $("#4pm").css("background-color", "grey");
+      }
+      if(numberHour == 16){
+        $("#4pm").css("background-color", "lightblue");
+      }
+      if(numberHour < 16){
+        $("#4pm").css("background-color", "lightgreen");
+      }
+      
+      if(numberHour > 17){
+        $("#5pm").css("background-color", "grey");
+      }
+      if(numberHour == 17){
+        $("#5pm").css("background-color", "lightblue");
+      }
+      if(numberHour < 17){
+        $("#5pm").css("background-color", "lightgreen");
+      }
+      
+
+
+
+
+
+
+      $(".saveBtn").click(function(){
+		var content1 = $("#in1").val();
+    localStorage.setItem("8am", content1);    
+
+    var content2 = $("#in2").val();
+    localStorage.setItem("9am", content2); 
+
+    var content3 = $("#in3").val();
+    localStorage.setItem("10am", content3);   
+
+    var content4 = $("#in4").val();
+    localStorage.setItem("11am", content4);
+
+    var content5 = $("#in5").val();
+    localStorage.setItem("12pm", content5);
+
+    var content6 = $("#in6").val();
+    localStorage.setItem("1pm", content6);
+    
+    var content7 = $("#in7").val();
+    localStorage.setItem("2pm", content7);
+    
+    var content8 = $("#in8").val();
+    localStorage.setItem("3pm", content8);
+    
+    var content9 = $("#in9").val();
+    localStorage.setItem("4pm", content9); 
+
+    
+    var content10 = $("#in10").val();
+    localStorage.setItem("5pm", content10);             
+	});
+
+  var text1fill = localStorage.getItem("8am");
+  var text2fill = localStorage.getItem("9am");
+  var text3fill = localStorage.getItem("10am");
+  var text4fill = localStorage.getItem("11am");
+  var text5fill = localStorage.getItem("12pm");
+  var text6fill = localStorage.getItem("1pm");
+  var text7fill = localStorage.getItem("2pm");
+  var text8fill = localStorage.getItem("3pm");
+  var text9fill = localStorage.getItem("4pm");
+  var text10fill = localStorage.getItem("5pm");
+
+  var fill1 = "<div>" + text1fill + "</div>";
+  $("#text1").append(fill1);
+
+  var fill2 = "<div>" + text2fill + "</div>";
+  $("#text2").append(fill2);
+
+  var fill3 = "<div>" + text3fill + "</div>";
+  $("#text3").append(fill3);
+
+  var fill4 = "<div>" + text4fill + "</div>";
+  $("#text4").append(fill4);
+
+  var fill5 = "<div>" + text5fill + "</div>";
+  $("#text5").append(fill5);
+
+  var fill6 = "<div>" + text6fill + "</div>";
+  $("#text6").append(fill6);
+
+  var fill7 = "<div>" + text7fill + "</div>";
+  $("#text7").append(fill7);
+
+  var fill8 = "<div>" + text8fill + "</div>";
+  $("#text8").append(fill8);
+
+  var fill9 = "<div>" + text9fill + "</div>";
+  $("#text9").append(fill9);
+
+  var fill10 = "<div>" + text10fill + "</div>";
+  $("#text10").append(fill10);
+
+
+
+
+
+    </script>
   </body>
 </html>
